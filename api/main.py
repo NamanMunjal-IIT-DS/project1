@@ -8,7 +8,7 @@ from pydantic import BaseModel
 from fastapi.responses import JSONResponse
 
 
-GROQ_API_KEY = "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"
+GROQ_API_KEY = "key"
 
 # Setup Chroma client
 ef = embedding_functions.DefaultEmbeddingFunction()
@@ -20,7 +20,7 @@ app = FastAPI()
 class QuestionRequest(BaseModel):
     question: str
 
-@app.post("/ask")
+@app.post("/api")
 async def ask_question(req: QuestionRequest):
     question = req.question
 
